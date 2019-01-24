@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Register</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" th:href="@{/img/icons/favicon.ico}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<!--===============================================================================================-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{fonts/iconic/css/material-design-iconic-font.min.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/hamburgers.min.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/animsition.min.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" th:href="@{/css/select2.min.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/daterangepicker.css}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" th:href="@{/css/util.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+<!--===============================================================================================-->
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100"
+			style="background-image: url('img/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" th:action="@{/register}"
+					th:object="${user}" method="post">
+					<span class="login100-form-title p-b-49"> Create new user </span>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="wrap-input100 validate-input m-b-23"
+								data-validate="Username is reauired">
+								<span class="label-input100">First name</span> <input
+									class="input100" type="text" th:field="*{firstName}"
+									placeholder="Type your first name"> <span
+									class="focus-input100" data-symbol="&#xf206;"></span>
+							</div>
+							<p th:if="${firstNameError != null}" th:text="${firstNameError}"
+								class="error-text">First name is not valid</p>
+							<div class="wrap-input100 validate-input m-b-23"
+								data-validate="Username is reauired">
+								<span class="label-input100">Last name</span> <input
+									class="input100" type="text" th:field="*{lastName}"
+									placeholder="Type your last name"> <span
+									class="focus-input100" data-symbol="&#xf206;"></span>
+							</div>
+							<p th:if="${lastNameError != null}" th:text="${lastNameError}"
+								class="error-text">Last name is not valid</p>
+							<div class="wrap-input100 validate-input"
+								data-validate="Email is required">
+								<span class="label-input100">Email</span> <input
+									class="input100" type="email" th:field="*{email}"
+									placeholder="Type your email"> <span
+									class="focus-input100" data-symbol="&#xf190;"></span>
+							</div>
+							<p th:if="${emailError != null}" th:text="${emailError}"
+								class="error-text">Email is not valid</p>
+						</div>
+						<div class="col-md-2"></div>
+						<div class="col-md-5">
+							<div class="wrap-input100 validate-input"
+								data-validate="Email is required">
+								<span class="label-input100">Mobile</span> <input
+									class="input100" type="text" th:field="*{mobile}"
+									placeholder="Type your phone number"> <span
+									class="focus-input100" data-symbol="&#xf190;"></span>
+							</div>
+							<p th:if="${mobileError != null}" th:text="${mobileError}"
+								class="error-text">mobile is not valid</p>
+							<div class="wrap-input100 validate-input m-b-23"
+								data-validate="Username is reauired">
+								<span class="label-input100">Hoobies</span> <input
+									class="input100" type="text" th:field="*{hobby}"
+									placeholder="Type your hobbies"> <span
+									class="focus-input100" data-symbol="&#xf206;"></span>
+							</div>
+							<div class="wrap-input100 validate-input m-b-23"
+								data-validate="Username is reauired">
+								<span class="label-input100">Description</span> <input
+									class="input100" type="text" th:field="*{description}"
+									placeholder="Type description"> <span
+									class="focus-input100" data-symbol="&#xf206;"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">Register</button>
+						</div>
+					</div>
+					<div class="flex-c-m">
+						<p>Register?</p>
+						<a th:href="@{/login}"> login now </a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
